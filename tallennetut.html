@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>GuessWord Tallennetut sanat</title>
+</head>
+<body>
+  <div class="wrap" id="wrap">
+    <!-- Nav bar-->
+    <nav class="navbar">
+      <div class="branding">
+          <h2><a href="#" class="branding-logo">WordGuess</a></h2>
+      </div>
+      <!--Hamburger-->
+      <label for="input-hamburger" class="hamburger"></label>
+      <input type="checkbox" id="input-hamburger" hidden>
+      <ul class="menu">
+          <!--TOPICS-->
+          <li class="has-dropdown">
+              <a href="#" class="menu-link" id="menuTopics">Topics
+                  <span class="arrow"></span>
+              </a>
+              <ul class="submenu">
+                  <li><a href="#" class="menu-link" id="allWords">All words</a></li>
+                  <li><a href="#" class="menu-link" id="4letterWords">4 letter words</a></li>
+                  <li><a href="#" class="menu-link" id="5letterWords" >5 letter words</a></li>
+                  <li><a href="#" class="menu-link" id="6letterWords">6 letter words</a></li>
+         
+              </ul>
+          </li>
+
+          <!--SAVED WORDS-->
+          <li><a href="./tallennetut.html" class="menu-link">Saved words</a></li>
+
+          <!--SETTINGS-->
+          <li class="has-dropdown">
+              <a href="#" class="menu-link">Settings
+                  <span class="arrow"></span>
+              </a>
+              <ul class="submenu" id="menuSettings">
+                  <select id="theme-selector"> 
+                    <option value="light">Light mode       </option>
+                    <option value="dark">Dark mode       </option>
+                  <option value="sepia">Sepia mode       </option>
+                  </select>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+    <div class="Back" id="Back">
+      <!--Link going back to start page-->
+      <a href="./aloitus.html">
+          <button id="back">< Back to game</button> <!--Unicode-icon for left pointing arrow and word back-->
+      </a>
+    </div>
+    <!--List area-->
+
+    <div class="saved-list-area" id="savedListArea">
+        <h3>SAVED WORDS</h3>
+        <ul class="saved-words-list" id="savedWordsList"></ul> <!--Saved words-->
+        <button class="del" id="delBtn"><embed src="./images/garbage-svgrepo-com.svg" id="trash" />Empty list</button>
+        </div>
+
+         <aside class="hahmo-container">
+           <div class="puhekupla">
+             <div class="text-container">
+               <p id="puheTeksti">Settings- valikosta voit valita light/sepia/dark mode teemojen välillä.</p>
+             </div>
+             <div class="speech-buttons">
+               <button id="backButton" class="speech-button">
+                 << </button>
+                   <button id="pauseButton" class="speech-button">||
+                   </button>
+                   <button id="nextButton" class="speech-button">>>
+                   </button>
+             </div>
+           </div>
+           <img src="./images/hahmo.png" id="hahmo" alt="Istuva hahmo puhekuplan alla.">
+         </aside>     
+
+  </div>
+    <script src="./js/saved.js"></script>
+</body>
+</html>
