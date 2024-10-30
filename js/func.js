@@ -34,20 +34,34 @@ const dictionary = [
     "CODE",
     "BYTE",
     "LINK",
+    "NODE",
+    "HTML",
+    "FONT",
+    "JAVA",
     // 5-letter ICT words
     "CACHE",
     "ARRAY",
     "INPUT",
     "LOGIN",
+    "STACK",
+    "VIRUS",
+    "BOARD",
+    "PATCH",
+    "MOUSE",
     // 6-letter ICT words
     "DOMAIN",
     "CLIENT",
     "SCRIPT",
-    "MEMORY"
+    "MEMORY",
+    "DRIVER",
+    "BACKUP",
+    "EXPORT",
+    "COOKIE",
+    "KERNEL",
+    "UPLOAD"
 ];
 
-// translations in finnish
-
+// translations in Finnish
 const translations = {
     "algorithm": "algoritmi",
     "application": "sovellus",
@@ -67,20 +81,35 @@ const translations = {
     "stylesheet": "tyylitiedosto",
     "variable": "muuttuja",
     "programming": "ohjelmointi",
-    // Translations for new words
     "data": "data",
     "code": "koodi",
     "byte": "tavu",
     "link": "linkki",
+    "node": "solmu",
+    "html": "html",
+    "font": "kirjasin",
+    "java": "java",
     "cache": "välimuisti",
     "array": "taulukko",
     "input": "syöte",
     "login": "kirjautuminen",
+    "stack": "pino",
+    "virus": "virus",
+    "board": "levy",
+    "patch": "korjaus",
+    "mouse": "hiiri",
     "domain": "verkkotunnus",
     "client": "asiakas",
     "script": "käsikirjoitus",
-    "memory": "muisti"
+    "memory": "muisti",
+    "driver": "ajuri",
+    "backup": "varmuuskopio",
+    "export": "vienti",
+    "cookie": "eväste",
+    "kernel": "ydin",
+    "upload": "lähetys"
 };
+
 
 
 // ***HAMBURGER-MENU***

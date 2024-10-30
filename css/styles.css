@@ -210,6 +210,7 @@ grid-auto-rows: minmax(50px, auto);
     align-items: center;
     height: auto;
     padding-top: 2rem;
+    padding-bottom: 1em;
 
 }
 

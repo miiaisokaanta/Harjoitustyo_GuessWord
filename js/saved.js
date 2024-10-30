@@ -71,10 +71,16 @@ function loadSavedWords() {
 //***CHARACTER AND SPEECH BUBBLE***
 
 const texts = [
-    "Voit valita Topics -valikosta arvattavan sanan pituuden tai kaikki sanat. ",
+    "Voit valita Topics -valikosta arvattavan sanan pituuden mukaisesti 4-,5- tai 6- kirjainta, tai valita kaikki sanat. ",
+    "Settings- valikosta voit valita teemaksi light/sepia/dark mode. Valittu teema pysyy kunnes valitset sen uudelleen.",
+    "Näppäimistöstä voit syöttää kirjaimia arvattavan sanan laatikoihin: punainen delete-näppäin pyyhkii ja vihreällä enter-näppäimellä voit lähettää arvauksen.",
+    "Arvauksesi ei tarvitse olla heti oikea sana, voit esimerkiksi syöttää kirjaimia järjestyksessä jolloin saat selville mitä kirjaimia sanassa ei ole.",
     "Kirjaimen laatikko muuttuu keltaiseksi, jos arvattu kirjain on oikea mutta väärässä kohdassa.",
     "Kirjaimen laatikko muuttuu vihreäksi, jos arvattu kirjain on oikea ja oikeassa kohdassa.",
     "Kirjaimen laatikko sekä näppäimistön kirjain muuttuvat harmaaksi, jos arvattua kirjainta ei ole arvattavassa sanassa.",
+    "Jos kirjaimen laatikon väri ei muutu, arvattu kirjain on arvattu jo vähintään kerran eikä sitä ole näin montaa arvattavassa sanassa.",
+    "Tehtyäsi arvauksen tulee uusi rivi laatikoita joihin tehdään uusi arvaus: voit verrata näiden laatikoiden sisältöjä.",
+    "Kun arvauksia on tehty useampia ja laatikkorivejä on monta päällekkäin, voit scrollata näitä ylös-alas tarkistaen edellisiä arvauksia.",
     "Voit tallentaa sanan ja sen käännöksen myöhempää tarkastelua varten Saved words näkymän listaan arvattuasi oikein.",
     "Halutessasi tyhjentää tallennettujen sanojen listan, paina empty list- painiketta listan alla."
 ];
