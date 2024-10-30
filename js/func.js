@@ -9,7 +9,7 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Alphabet used in the game
 
 // words in english
 
-// HOX! TÄN SISÄLTÖ TÄYTYY OLLA ISOLLA JOTTA TOIMII
+// HOX! NEEDS TO BE UPPER CASE TO WORK
 const dictionary = [
     "ALGORITHM",
     "APPLICATION",
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // ***TOPICS SELECT***
 
-// *** DICTIONARY FILTERING BASED ON SELECTION ***
+// *** DICTIONARY FILTERING BASED ON SELECTION FROM TOPICS ***
 const allLetterWords = dictionary; // Use the full dictionary
 const fourLetterWords = dictionary.filter(word => word.length === 4);
 const fiveLetterWords = dictionary.filter(word => word.length === 5);
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to update the game with the new word set and update the title
 function updateDictionary(filteredWords, topicName) {
   currentWord = filteredWords[Math.floor(Math.random() * filteredWords.length)];
-  aiheOtsikko.textContent = ` ${topicName}`; // Päivitetään aiheotsikko
+  aiheOtsikko.textContent = ` ${topicName}`; // Update aiheOtsikko title
   newGame(filteredWords, topicName); // Start a new game with the chosen topic
 }
 
@@ -186,7 +186,7 @@ const newGame = (filteredWords = allLetterWords, topicName = "All Words") => {
   currentGuess = "";
   currentLetterIndex = 0;
   currentRow = 0;
-  aiheOtsikko.textContent = ` ${topicName}`; // Asetetaan aiheotsikko uudelle pelille
+  aiheOtsikko.textContent = ` ${topicName}`; // Set aiheOtsikko title for new game
   createRows();
   createKeyboard();
 };
@@ -216,19 +216,21 @@ function createKeyboard() {
         keyboard.appendChild(key);
     });
 
+    // Add delete and enter keys
     const deleteKey = document.createElement('div');
     deleteKey.classList.add('key', 'delete-key');
-    deleteKey.textContent = String.fromCharCode(0x232B);
+    deleteKey.textContent = String.fromCharCode(0x232B); // Unicode character for backspace
     deleteKey.addEventListener('click', handleDelete);
     keyboard.appendChild(deleteKey);
 
     const enterKey = document.createElement('div');
     enterKey.classList.add('key', 'enter-key');
-    enterKey.textContent = String.fromCharCode(0x21B5);
+    enterKey.textContent = String.fromCharCode(0x21B5); // Unicode character for enter
     enterKey.addEventListener('click', handleEnter);
     keyboard.appendChild(enterKey);
 }
 
+// Handle key press; add letter to guess when key is pressed
 function handleKeyPress(letter) {
     if (currentLetterIndex < currentWord.length) {
         const currentRowElement = wordGrid.children[currentRow];
@@ -239,6 +241,7 @@ function handleKeyPress(letter) {
     }
 }
 
+//delete function
 function handleDelete() {
     if (currentLetterIndex > 0) {
         currentLetterIndex--;
@@ -249,6 +252,7 @@ function handleDelete() {
     }
 }
 
+//enter function
 function handleEnter() {
     if (currentGuess.length === currentWord.length) {
         checkGuess();
@@ -264,11 +268,13 @@ function handleEnter() {
 }
 
 
+// Check if guess is correct
 function checkGuess() {
     const currentRowElement = wordGrid.children[currentRow];
     const boxes = currentRowElement.getElementsByClassName('word-box');
     let wordCopy = currentWord.split('');
 
+    //correct letter and position
     for (let i = 0; i < currentGuess.length; i++) {
         if (currentGuess[i] === currentWord[i]) {
             boxes[i].style.backgroundColor = 'lightgreen';
@@ -276,6 +282,7 @@ function checkGuess() {
         }
     }
 
+    //correct letter but wrong position
     for (let i = 0; i < currentGuess.length; i++) {
         if (wordCopy.includes(currentGuess[i]) && boxes[i].style.backgroundColor !== 'lightgreen') {
             boxes[i].style.backgroundColor = 'yellow';
@@ -283,6 +290,7 @@ function checkGuess() {
         }
     }
 
+    //wrong letter
     for (let i = 0; i < currentGuess.length; i++) {
         if (!currentWord.includes(currentGuess[i]) && boxes[i].style.backgroundColor !== 'lightgreen' && boxes[i].style.backgroundColor !== 'yellow') {
             boxes[i].style.backgroundColor = 'gray';
@@ -291,6 +299,7 @@ function checkGuess() {
     }
 }
 
+//keyboard key color change when wrong letter
 function disableKey(letter, color) {
     const keys = document.getElementsByClassName('key');
     for (let i = 0; i < keys.length; i++) {
@@ -314,31 +323,19 @@ function win() {
     newGame(); // Start a new game after winning
 }
 
-// Tallennetaan sanat localStorageen
+// Save the word in localStorage
 function addSavedList(word, translation) {
-    // Haetaan jo tallennetut sanat tai luodaan tyhjä lista
+    // get saved words or create empty array
     let savedWords = JSON.parse(localStorage.getItem('savedWords')) || [];
     
-    // Lisätään uusi sana ja käännös listaan
+    // add new word and translation to array
     
     savedWords.push({ word, translation });
     
-    // Tallennetaan lista localStorageen
+    // save array to localStorage
     localStorage.setItem('savedWords', JSON.stringify(savedWords));
 }
 
 
 // Initialize the game on page load
 window.onload = newGame;
-
-
-
-
-
-
-
-
-
-//***SAVED WORDS VIEW***
-
-//***TOPICS/ DICTIONARIES***

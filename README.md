@@ -9,7 +9,8 @@ Tässä pelissä ei ole rajamäärää arvauksille, vaan käyttäjä voi arvata 
 
 Oikeassa arvauksessa tulee ilmoitus voitosta jossa lukee sana englanniksi sekä sen suomennos. Siinä myös kysytään tahdotaanko tallentaa sana Saved words- listalle.
 Jos käyttäjä tahtoo tallentaa sanan myöhempää tarkastelua varten, painetaan ilmoituksessa "ok" jolloin sana tallentuu listalle - jos ei, painetaan cancel.
-Saved words näkymästä voi tarkistella tallentamiaan sanoja; sana englanniksi sekä sen käännös. Kun näitä ei enää halua listalle, voidaan painaa listan alla olevaa punaista roskalaatikon kuvalla olevaa 'empty list'- nappia josta koko lista tyhjenee.
+Saved words näkymästä voi tarkistella tallentamiaan sanoja; sana englanniksi sekä sen käännös. Kun näitä ei enää halua listalle, voidaan painaa listan alla olevaa punaista roskalaatikon kuvalla olevaa 'empty list'- nappia josta koko lista tyhjenee. HUOM! Lista tallennetuille sanoille on tarkoitettu väliaikaiseksi listaksi sanoille jotka olivat uusia tai vaikeita ja tämän kautta niitä voi opiskella  tarkemmin. Lista tyhjenee kokonaan 'empty list'- painikkeesta luodakseen tilan uusille opiskeltaville sanoille eikä tyhjennettyä listaa saada takaisin.
+
 Saved words näkymässä näkyy myös hahmo ja 'puhekupla' jossa pyörii tekstinä ohjeita. Käyttäjä voi tekstin alla olevia näppäimiä ( <<, ||/> ja >> ) käyttämällä pysäyttää/ käynnistää tekstien automaattisen vaihtumisen (||/>) sekä näyttää edellisen tai seuraavan tekstin (<< / >>).
 
 Settings- valikosta voidaan vaihtaa teemaa valiten tumman, seepian tai vaalean tilan. Valittu teema pysyy kunnes se vaihdetaan uudestaan.

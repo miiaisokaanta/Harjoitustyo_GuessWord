@@ -3,6 +3,7 @@
 
 // ***HAMBURGER-MENU***
 
+//open and close menu when hamburger icon is clicked
 const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener('click', function(){
     this.classList.toggle("close");
@@ -33,24 +34,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
+//load saved words from localStorage to list on html page
 function loadSavedWords() {
           const savedList = document.getElementById('savedWordsList');
         
-          // Tarkistetaan, että savedWordsList-elementti on olemassa tällä sivulla
+          // check if savedWordsList element exists
           if (savedList) {
             const savedWords = JSON.parse(localStorage.getItem('savedWords')) || [];
-            savedList.innerHTML = ''; // Tyhjennetään lista ennen lataamista
+            savedList.innerHTML = ''; // enpty list before loading
         
-            // Käytetään Set-objektia estämään duplikaattien lisääminen
+            // set object to avoid adding duplicates
             const uniqueWords = new Set();
         
             savedWords.forEach(item => {
-              const key = item.word.toUpperCase(); // Muutetaan sana isoiksi kirjaimiksi vertailua varten
-              if (!uniqueWords.has(key)) { // Tarkistetaan, onko sana jo lisätty
-                uniqueWords.add(key); // Lisätään sana Settiin
+              const key = item.word.toUpperCase(); // change key to uppercase for comparison
+              if (!uniqueWords.has(key)) { // check if word is already in the list
+                uniqueWords.add(key); // add word to Set
         
-                // Luodaan listaelementti
+                // create list item: word = translation
                 const listItem = document.createElement('li');
                 listItem.textContent = `${item.word} = ${item.translation}`;
         
@@ -61,6 +62,7 @@ function loadSavedWords() {
           }
         }
     
+  //empty saved list = clear localStorage      
   document.getElementById('delBtn').addEventListener('click', function() {
     localStorage.removeItem('savedWords')
     loadSavedWords()
@@ -139,5 +141,5 @@ const texts = [
 
   
 
-// Kutsutaan loadSavedWords vain, jos olemme saved words -sivulla
+// Load saved words on page load
 window.onload = loadSavedWords;
